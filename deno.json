@@ -1,0 +1,18 @@
+{
+  "imports": {
+    "std/": "https://deno.land/std@0.181.0/",
+    "oak": "https://deno.land/x/oak@v12.1.0/mod.ts",
+    "config": "./src/config/config.ts",
+    "types/": "./src/types/"
+  },
+  "tasks": {
+    "dev": "deno run --allow-net --watch src/app.ts",
+    "test": "deno test --coverage=coverage",
+    "coverage": "deno coverage coverage"
+  },
+  "fmt": {
+    "files": {
+      "include": ["src/"]
+    }
+  }
+}

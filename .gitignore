@@ -1,0 +1,5 @@
+# vscode
+.vscode/
+
+# Code testing
+coverage/
