@@ -25,6 +25,7 @@ Edit `config.json` with your configurations.
 
 ## Roadmap
 - [x] Unit testing
+- [ ] Validation
 - [ ] CRUD
 - [ ] Logging
 - [ ] OpenAPI
