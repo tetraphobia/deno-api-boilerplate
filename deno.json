@@ -6,6 +6,7 @@
     "types/": "./src/types/"
   },
   "tasks": {
+    "start": "deno run --allow-net src/app.ts",
     "dev": "deno run --allow-net --watch src/app.ts",
     "test": "deno test --coverage=coverage",
     "coverage": "deno coverage coverage"
