@@ -7,7 +7,7 @@
     "types/": "./src/types/"
   },
   "tasks": {
-    "build": "deno run --allow-write --allow-run --allow-read tools/build.ts",
+    "build": "deno task clean && deno run --allow-write --allow-run --allow-read tools/build.ts",
     "coverage": "deno coverage coverage",
     "clean": "deno run --allow-write --allow-run --allow-read tools/clean.ts",
     "dev": "deno run --allow-net --watch src/app.ts",
