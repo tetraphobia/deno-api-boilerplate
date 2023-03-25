@@ -1,4 +1,4 @@
-import { ControllerContext } from "../types/controller.ts";
+import { ControllerContext } from "./types/controller.ts";
 
 export function notFound(context: ControllerContext): void {
     context.response.status = 404

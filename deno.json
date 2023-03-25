@@ -1,19 +1,22 @@
 {
   "imports": {
     "std/": "https://deno.land/std@0.181.0/",
+    "lib/": "./src/lib/",
     "oak": "https://deno.land/x/oak@v12.1.0/mod.ts",
     "config": "./src/config/config.ts",
     "types/": "./src/types/"
   },
   "tasks": {
-    "start": "deno run --allow-net src/app.ts",
+    "build": "deno run --allow-write --allow-run --allow-read tools/build.ts",
+    "coverage": "deno coverage coverage",
+    "clean": "deno run --allow-write --allow-run --allow-read tools/clean.ts",
     "dev": "deno run --allow-net --watch src/app.ts",
-    "test": "deno test --coverage=coverage",
-    "coverage": "deno coverage coverage"
+    "start": "deno run --allow-net src/app.ts",
+    "test": "deno test --coverage=coverage"
   },
   "fmt": {
     "files": {
-      "include": ["src/"]
+      "include": ["src/", "tools/"]
     }
   }
 }

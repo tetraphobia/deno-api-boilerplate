@@ -1,5 +1,8 @@
+# built binaries
+build/
+
 # vscode
 .vscode/
 
-# Code testing
+# code testing
 coverage/
