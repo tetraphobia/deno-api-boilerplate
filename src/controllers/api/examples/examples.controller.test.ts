@@ -1,5 +1,5 @@
 import { testing } from "oak";
-import { assert, assertEquals } from "std/testing/asserts.ts";
+import { assertEquals } from "std/testing/asserts.ts";
 import { ExamplesController } from "./examples.controller.ts";
 
 Deno.test("Examples Controller", async (test) => {
