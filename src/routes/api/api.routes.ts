@@ -1,10 +1,10 @@
-import { Router } from "oak";
-import { ExamplesRouter } from "./examples/examples.routes.ts";
+import { oak } from "../../../deps.ts";
+import { router as examplesRouter } from "./examples/examples.routes.ts";
 
-export const ApiRouter = new Router();
+export const router = new oak.Router();
 
-ApiRouter.use(
+router.use(
   "/examples",
-  ExamplesRouter.routes(),
-  ExamplesRouter.allowedMethods(),
+  examplesRouter.routes(),
+  examplesRouter.allowedMethods(),
 );

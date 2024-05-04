@@ -1,7 +1,7 @@
-import paths from './paths.ts'
+import paths from "./paths.ts";
 
 const dirs = [
-    paths.build
+  paths.build,
 ];
 
 for (const dir of dirs) {

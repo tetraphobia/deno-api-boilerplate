@@ -1,76 +1,80 @@
-import { testing } from "oak";
-import { assertEquals } from "std/testing/asserts.ts";
+import { oak } from "../../../../deps.ts";
+import { assert } from "../../../../deps.ts";
 import { ExamplesController } from "./examples.controller.ts";
+
+const controllers = {
+  examples: new ExamplesController(),
+};
 
 Deno.test("Examples Controller", async (test) => {
   await test.step("GET /api/examples", () => {
-    const context = testing.createMockContext({
+    const context = oak.testing.createMockContext({
       path: "/api/examples",
     });
 
-    ExamplesController.getAll(context);
+    controllers.examples.getAll(context);
 
-    assertEquals(
+    assert.assertEquals(
       typeof context.response.body,
       "object",
     );
-    assertEquals(
+    assert.assertEquals(
       context.response.status,
       200,
     );
-    assertEquals(
+    assert.assertEquals(
       context.response.headers.get("content-type"),
       "application/json",
     );
   });
 
   await test.step("GET /api/examples/1", () => {
-    const context = testing.createMockContext({
+    const context = oak.testing.createMockContext({
       path: "/api/examples/1",
       params: {
         id: "1",
       },
     });
 
-    ExamplesController.getOne(context);
+    controllers.examples.getOne(context);
 
-    assertEquals(
+    assert.assertEquals(
       typeof context.response.body,
       "object",
     );
-    assertEquals(
+    assert.assertEquals(
       context.response.status,
       200,
     );
-    assertEquals(
+    assert.assertEquals(
       context.response.headers.get("content-type"),
       "application/json",
     );
   });
 
   await test.step("GET /api/examples/invalid", () => {
-    const context = testing.createMockContext({
+    const context = oak.testing.createMockContext({
       path: "/api/examples/invalid",
       params: {
         id: "invalid",
       },
     });
 
-    ExamplesController.getOne(context);
+    controllers.examples.getOne(context);
 
-    assertEquals(
+    assert.assertEquals(
       typeof context.response.body,
       "object",
     );
-    assertEquals(
+    assert.assertEquals(
       context.response.status,
       404,
     );
-    assertEquals(
+    assert.assertEquals(
       context.response.headers.get("content-type"),
       "application/json",
     );
-    assertEquals(
+    assert.assertEquals(
       context.response.body,
       {
         message: "Not found.",

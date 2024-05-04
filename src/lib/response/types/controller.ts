@@ -1,5 +1,5 @@
-import { Context, RouteParams } from "oak";
+import { oak } from "../../../../deps.ts";
 
-export interface ControllerContext extends Context {
-    params: RouteParams<string>
+export interface ControllerContext extends oak.Context {
+  params: oak.RouteParams<string>;
 }

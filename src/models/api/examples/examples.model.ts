@@ -10,11 +10,11 @@ class Examples extends Map<string, Example> {
   }
 
   findAll(): Example[] {
-    return Array.from(this.values())
+    return Array.from(this.values());
   }
 
   findOne(id: string): Example | null {
-    return this.get(id) || null
+    return this.get(id) || null;
   }
 }
 
@@ -38,4 +38,4 @@ db.set("3", {
   description: "Example description",
 });
 
-export default db 
+export default db;

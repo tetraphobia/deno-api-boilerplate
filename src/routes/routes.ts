@@ -1,6 +1,6 @@
-import { Router } from 'oak'
-import { ApiRouter } from './api/api.routes.ts'
+import { oak } from "../../deps.ts";
+import { router } from "./api/api.routes.ts";
 
-export const RootRouter = new Router()
+export const rootRouter = new oak.Router();
 
-RootRouter.use('/api', ApiRouter.routes(), ApiRouter.allowedMethods())
+rootRouter.use("/api", router.routes(), router.allowedMethods());

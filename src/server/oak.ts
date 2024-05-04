@@ -1,6 +1,7 @@
-import { Application } from "oak";
-import { RootRouter } from "../routes/routes.ts";
+import { oak, simplelog } from "../../deps.ts";
+import { rootRouter } from "../routes/routes.ts";
 
-export const App = new Application();
+export const app = new oak.Application();
 
-App.use(RootRouter.routes());
+app.use(simplelog);
+app.use(rootRouter.routes());

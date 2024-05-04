@@ -1,7 +1,9 @@
-import { Router } from "oak";
+import { oak } from "../../../../deps.ts";
 import { ExamplesController } from "../../../controllers/api/examples/examples.controller.ts";
 
-export const ExamplesRouter = new Router();
+const controller = new ExamplesController();
 
-ExamplesRouter.get("/", ExamplesController.getAll);
-ExamplesRouter.get("/:id", ExamplesController.getOne);
+export const router = new oak.Router();
+
+router.get("/", controller.getAll);
+router.get("/:id", controller.getOne);

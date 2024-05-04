@@ -1,4 +1,4 @@
-import { Config } from "config";
-import { App } from "./server/oak.ts";
+import { config } from "./config/config.ts";
+import { app } from "./server/oak.ts";
 
-await App.listen({ port: Config.OAK_PORT });
+await app.listen({ port: config.OAK_PORT });

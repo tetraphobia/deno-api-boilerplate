@@ -1,4 +1,4 @@
-import * as path from "std/path/mod.ts";
+import { path } from "../deps.ts";
 
 const project = path.resolve(
   path.dirname(path.fromFileUrl(Deno.mainModule)),

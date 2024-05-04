@@ -1,5 +1,5 @@
-import paths from './paths.ts'
-import { resolve } from "std/path/mod.ts";
+import paths from "./paths.ts";
+import { path } from "../deps.ts";
 
 await Deno.mkdir(paths.build, {
   recursive: true,
@@ -10,7 +10,7 @@ await Deno.run({
     "deno",
     "compile",
     "--output",
-    resolve(paths.build, "app"),
-    resolve(paths.src, "app.ts"),
+    path.resolve(paths.build, "app"),
+    path.resolve(paths.src, "app.ts"),
   ],
 }).status();
