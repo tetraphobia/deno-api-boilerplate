@@ -1,4 +1,4 @@
-# Deno API Boilerplate
+# Deno API Boilerplate (v1)
 This is a starter project for RESTful APIs written in Deno.
 
 ## Prerequisites
@@ -22,12 +22,3 @@ deno task test
 
 ## Configuration
 Edit `config.json` with your configurations.
-
-## Roadmap
-- [x] Unit testing
-- [ ] Validation
-- [ ] CRUD
-- [ ] Logging
-- [ ] OpenAPI
-- [ ] Authentication with JWTs
-- [ ] ORM
