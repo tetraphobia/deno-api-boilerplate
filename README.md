@@ -18,6 +18,9 @@ build/app
 
 # Run unit tests
 deno task test
+
+# Generate coverage report
+deno task coverage
 ```
 
 ## Configuration
